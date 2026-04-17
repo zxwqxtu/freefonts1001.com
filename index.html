@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FreeFonts1001 — Discover and download 15,000+ free fonts for personal and commercial use. Updated daily with fresh serif, sans-serif, script, 3D, and display typography.">
+    <title>FreeFonts1001 — 15,000+ Free Fonts | Updated Daily</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f0f0f;
+            --surface: #1a1a1a;
+            --surface2: #252525;
+            --accent: #e8c547;
+            --accent2: #ff6b35;
+            --text: #f0ece3;
+            --text-dim: #9b9589;
+            --border: #2e2e2e;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .hero {
+            position: relative;
+            padding: 100px 40px 80px;
+            text-align: center;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border);
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(232,197,71,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            border: 1px solid rgba(232,197,71,0.3);
+            padding: 5px 16px;
+            border-radius: 20px;
+            margin-bottom: 28px;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 7vw, 88px);
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+        }
+        h1 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+        .hero-desc {
+            font-size: 18px;
+            color: var(--text-dim);
+            max-width: 560px;
+            margin: 0 auto 36px;
+            font-weight: 300;
+        }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-dim);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+        .cta-bar {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 44px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: #0f0f0f;
+        }
+        .btn-primary:hover { background: #f0d45e; transform: translateY(-1px); }
+        .btn-outline {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+        .section { padding: 80px 40px; }
+        .container { max-width: 1100px; margin: 0 auto; }
+
+        .section-label {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        .section-sub {
+            color: var(--text-dim);
+            font-size: 16px;
+            max-width: 560px;
+            margin-bottom: 48px;
+            font-weight: 300;
+        }
+
+        /* Font Categories */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        .category-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px 24px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.2s;
+            display: block;
+        }
+        .category-card:hover {
+            border-color: var(--accent);
+            background: var(--surface2);
+            transform: translateY(-2px);
+        }
+        .category-icon {
+            font-size: 28px;
+            margin-bottom: 14px;
+            display: block;
+        }
+        .category-name {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+        .category-count {
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        /* Featured Fonts */
+        .featured-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .font-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+        .font-card:hover {
+            border-color: rgba(232,197,71,0.4);
+            transform: translateY(-2px);
+        }
+        .font-preview {
+            padding: 32px 24px;
+            background: var(--surface2);
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .font-preview span {
+            font-size: 42px;
+            line-height: 1;
+            color: var(--text);
+        }
+        .font-info {
+            padding: 16px 20px;
+        }
+        .font-name {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        .font-meta {
+            font-size: 12px;
+            color: var(--text-dim);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .font-tag {
+            background: rgba(232,197,71,0.1);
+            color: var(--accent);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* Trend Report */
+        .trend-block {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 24px;
+        }
+        .trend-block h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .trend-block p {
+            color: var(--text-dim);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        .trend-list {
+            list-style: none;
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .trend-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--text-dim);
+        }
+        .trend-list li::before {
+            content: '◆';
+            color: var(--accent);
+            font-size: 8px;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+
+        /* Comparison */
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--surface);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .compare-table th {
+            background: var(--surface2);
+            padding: 14px 20px;
+            text-align: left;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            border-bottom: 1px solid var(--border);
+        }
+        .compare-table td {
+            padding: 14px 20px;
+            font-size: 14px;
+            border-bottom: 1px solid var(--border);
+        }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table .check { color: #4ade80; }
+        .compare-table .cross { color: #f87171; }
+
+        /* Guide */
+        .guide-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 24px;
+        }
+        .guide-step {
+            display: flex;
+            gap: 16px;
+        }
+        .step-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+            flex-shrink: 0;
+            width: 48px;
+        }
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 15px;
+        }
+        .step-desc {
+            font-size: 13px;
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
+
+        /* License Banner */
+        .license-banner {
+            background: linear-gradient(135deg, rgba(232,197,71,0.08), rgba(255,107,53,0.06));
+            border: 1px solid rgba(232,197,71,0.2);
+            border-radius: 16px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            align-items: center;
+        }
+        @media (max-width: 640px) {
+            .license-banner { grid-template-columns: 1fr; }
+        }
+        .license-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+        .license-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(232,197,71,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        .license-title {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+        .license-desc {
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        /* Bottom CTA */
+        .bottom-cta {
+            text-align: center;
+            padding: 80px 40px;
+            border-top: 1px solid var(--border);
+        }
+        .bottom-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            margin-bottom: 16px;
+            line-height: 1.15;
+        }
+        .bottom-cta p {
+            color: var(--text-dim);
+            font-size: 16px;
+            margin-bottom: 36px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        footer {
+            text-align: center;
+            padding: 32px 40px;
+            border-top: 1px solid var(--border);
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+        footer a { color: var(--text-dim); text-decoration: none; }
+        footer a:hover { color: var(--accent); }
+
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 0;
+        }
+        @media (max-width: 640px) {
+            .hero, .section { padding-left: 20px; padding-right: 20px; }
+            .hero-stats { gap: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-tag">✨ Updated Daily · 15,000+ Fonts</div>
+    <h1>Find the Perfect<br><em>Free Font</em> for<br>Every Project</h1>
+    <p class="hero-desc">From elegant serifs to bold display faces — browse, preview, and download thousands of hand-curated fonts. Free for personal and commercial use.</p>
+
+    <div class="hero-stats">
+        <div class="stat">
+            <div class="stat-num">15,000+</div>
+            <div class="stat-label">Free Fonts</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num">104</div>
+            <div class="stat-label">Categories</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num">TTF / OTF</div>
+            <div class="stat-label">Formats</div>
+        </div>
+        <div class="stat">
+            <div class="stat-num">Daily</div>
+            <div class="stat-label">New Additions</div>
+        </div>
+    </div>
+
+    <div class="cta-bar">
+        <a href="https://www.freefonts1001.com/" class="btn btn-primary">Browse All Fonts →</a>
+        <a href="https://www.freefonts1001.com/" class="btn btn-outline">View Categories</a>
+    </div>
+</section>
+
+<!-- FONT CATEGORIES -->
+<section class="section">
+    <div class="container">
+        <div class="section-label">Font Categories</div>
+        <h2 class="section-title">Explore Fonts by Style</h2>
+        <p class="section-sub">From time-honored serifs to cutting-edge 3D typefaces — find the exact style that speaks your design language.</p>
+
+        <div class="category-grid">
+            <a href="https://www.freefonts1001.com/" class="category-card">
+                <span class="category-icon">🖋️</span>
+                <div class="category-name">Serif</div>
+                <div class="category-count">2,400+ fonts</div>
+            </a>
+            <a href="https://www.freefonts1001.com/" class="category-card">
+                <span class="category-icon">✦</span>
+                <div class="category-name">Sans-Serif</div>
+                <div class="category-count">3,100+ fonts</div>
+            </a>
+            <a href="https://www.freefonts1001.com/" class="category-card">
+                <span class="category-icon">✍️</span>
+                <div class="category-name">Script & Handwritten</div>
+                <div class="category-count">1,800+ fonts</div>
+            </a>
+            <a href="https://www.freefonts1001.com/" class="category-card">
+                <span class="category-icon">🗡️</span>
+                <div class="category-name">Display & Poster</div>
+                <div class="category-count">1,200+ fonts</div>
+            </a>
+            <a href="https://www.freefonts1001.com/" class="category-card">
+                <span class="category-icon">💎</span>
+                <div class="category-name">3D Fonts</div>
+                <div class="category-count">280+ fonts</div>
+            </a>
+            <a href="https://www.freefonts1001.com/" class="category-card">
+                <span class="category-icon">🔤</span>
+                <div class="category-name">Textured</div>
+                <div class="category-count">350+ fonts</div>
+            </a>
+            <a href="https://www.freefonts1001.com/" class="category-card">
+                <span class="category-icon">🏛️</span>
+                <div class="category-name">Gothic & Blackletter</div>
+                <div class="category-count">420+ fonts</div>
+            </a>
+            <a href="https://www.freefonts1001.com/" class="category-card">
+                <span class="category-icon">🎯</span>
+                <div class="category-name">Modern & Tech</div>
+                <div class="category-count">950+ fonts</div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TRENDING STYLES -->
+<section class="section">
+    <div class="container">
+        <div class="section-label">2025 Trend Report</div>
+        <h2 class="section-title">Typography Trends Defining This Year</h2>
+        <p class="section-sub">Understanding where type design is heading helps you make smarter font choices for your brand and projects.</p>
+
+        <div class="trend-block">
+            <h3>🔄 Variable Fonts Go Mainstream</h3>
+            <p>Variable fonts (TTF/OTF with adjustable weight, width, and optical size axes) have moved from experimental to essential. Designers love them because a single font file replaces dozens of static weights — dramatically reducing page load times and giving fine-grained typographic control. Nova Gothic is a standout open-source example, offering a geometric sans with a smooth weight axis that performs beautifully across print and screen.</p>
+            <ul class="trend-list">
+                <li>One file, infinite styles — weight, width, slant all adjustable via CSS or design tools</li>
+                <li>Significant performance gains: 60–80% smaller file size vs. multiple static font files</li>
+                <li>Full OpenType variable font support now in Figma, Adobe apps, and all major browsers</li>
+                <li>Ideal for responsive design: fluid type scales without loading separate font files</li>
+            </ul>
+        </div>
+
+        <div class="trend-block">
+            <h3>📐 Neo-Grotesque Sans: The New Default</h3>
+            <p>Clean, geometric sans-serifs with subtle personality — think Neo-Grotesque — are dominating brand identities and UI design in 2025. Not the cold neutrality of 2000s tech fonts, but warm, slightly quirky versions with humanist touches. They work across luxury branding, tech, editorial, and minimalist packaging.</p>
+            <ul class="trend-list">
+                <li>High x-height, open apertures, and carefully tuned stroke contrast</li>
+                <li>Excellent readability at both display and body text sizes</li>
+                <li>Versatile enough for headlines and long-form content</li>
+                <li>Brands like linear, Satoshi, and General Sans lead the category</li>
+            </ul>
+        </div>
+
+        <div class="trend-block">
+            <h3>🏛️ Serif Renaissance: Editorial Is Back</h3>
+            <p>After years of sans-serif dominance, editorial serifs are reclaiming territory. High-contrast didone and humanist serif fonts — think Mrs Eaves, Tisa Offc Serif, or elegant magazine titling faces — are appearing in fashion, food, lifestyle, and luxury branding. The trend signals a broader cultural shift toward warmth, craft, and storytelling over sterile minimalism.</p>
+            <ul class="trend-list">
+                <li>Contrast-driven serifs with fine hairline strokes and strong bracketed serifs</li>
+                <li>Work best at large sizes; optical sizing matters for body text legibility</li>
+                <li>Pair beautifully with geometric sans for body copy</li>
+                <li>Strong in print: magazines, book covers, restaurant menus, boutique branding</li>
+            </ul>
+        </div>
+
+        <div class="trend-block">
+            <h3>🖐️ Hand-Drawn & Organic: Authenticity Wins</h3>
+            <p>In a world of AI-generated content, hand-drawn type feels refreshingly human. Brush scripts, organic lettering, and craft-focused display fonts are trending in food branding, artisan products, creative studios, and social content. They're not about perfect execution — the "imperfect" quality IS the appeal.</p>
+            <ul class="trend-list">
+                <li>Brush scripts, chalk lettering, and imperfect hand-lettered styles</li>
+                <li>Great for social media, packaging, and lifestyle branding</li>
+                <li>Use sparingly — best as accent or headline type, not body copy</li>
+                <li>Pair with a clean sans-serif for legibility in all contexts</li>
+            </ul>
+        </div>
+
+        <div class="trend-block">
+            <h3>✨ 3D & Textured Fonts: Bold Digital Expression</h3>
+            <p>3D fonts and textured display type are gaining traction in digital art, gaming, entertainment advertising, and experimental graphic design. With depth, lighting, and material effects built directly into the glyph outlines, these fonts let designers create visual impact without relying on Photoshop effects.</p>
+            <ul class="trend-list">
+                <li>Best reserved for headlines, logos, and posters — not body text</li>
+                <li>Strong for gaming, entertainment, tech, and creative agency portfolios</li>
+                <li>Pair with flat, clean type to balance visual weight</li>
+                <li>FreeFonts1001 has a dedicated collection of 280+ 3D fonts updated regularly</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FEATURED FONTS TODAY -->
+<section class="section">
+    <div class="container">
+        <div class="section-label">Today's Pick</div>
+        <h2 class="section-title">Featured Fonts on FreeFonts1001</h2>
+        <p class="section-sub">Hand-picked selections from today's updated collection — click through to preview and download instantly.</p>
+
+        <div class="featured-list">
+            <div class="font-card">
+                <div class="font-preview" style="background:#1e3a5f"><span style="color:#e8c547;font-family:serif">Abc</span></div>
+                <div class="font-info">
+                    <div class="font-name">Nova Gothic Variable</div>
+                    <div class="font-meta">
+                        <span>Sans-Serif · Geometric</span>
+                        <span class="font-tag">Variable</span>
+                    </div>
+                </div>
+            </div>
+            <div class="font-card">
+                <div class="font-preview" style="background:#2d1e2f"><span style="color:#ff6b9d;font-family:'Playfair Display',serif;font-style:italic">Abc</span></div>
+                <div class="font-info">
+                    <div class="font-name">Tisa Offc Serif Pro</div>
+                    <div class="font-meta">
+                        <span>Serif · Editorial</span>
+                        <span class="font-tag">Popular</span>
+                    </div>
+                </div>
+            </div>
+            <div class="font-card">
+                <div class="font-preview" style="background:#1a2a1a"><span style="color:#7de88c;font-family:monospace">Abc</span></div>
+                <div class="font-info">
+                    <div class="font-name">Source Han Sans CN</div>
+                    <div class="font-meta">
+                        <span>Sans-Serif · CJK</span>
+                        <span class="font-tag">52K+ DLs</span>
+                    </div>
+                </div>
+            </div>
+            <div class="font-card">
+                <div class="font-preview" style="background:#2a1a1a"><span style="color:#ff6b35;font-family:serif">Abc</span></div>
+                <div class="font-info">
+                    <div class="font-name">YouSheBiaoTiHei</div>
+                    <div class="font-meta">
+                        <span>Display · Chinese Brand</span>
+                        <span class="font-tag">Trending</span>
+                    </div>
+                </div>
+            </div>
+            <div class="font-card">
+                <div class="font-preview" style="background:#0a0a1a"><span style="color:#8b8bff;font-size:36px;font-weight:bold">Abc</span></div>
+                <div class="font-info">
+                    <div class="font-name">3D Textured Collection</div>
+                    <div class="font-meta">
+                        <span>3D · Display · 280+</span>
+                        <span class="font-tag">Collection</span>
+                    </div>
+                </div>
+            </div>
+            <div class="font-card">
+                <div class="font-preview" style="background:#1a1a0a"><span style="color:#e8c547;font-family:cursive">Abc</span></div>
+                <div class="font-info">
+                    <div class="font-name">Hand-Drawn Scripts</div>
+                    <div class="font-meta">
+                        <span>Script · Organic · 1,800+</span>
+                        <span class="font-tag">Updated</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- LICENSE GUIDE -->
+<section class="section">
+    <div class="container">
+        <div class="section-label">License Guide</div>
+        <h2 class="section-title">Free Fonts — Know Before You Download</h2>
+        <p class="section-sub">Confusion about font licenses costs designers time and money. Here's what you need to know before using any free font commercially.</p>
+
+        <div class="license-banner">
+            <div class="license-item">
+                <div class="license-icon">✅</div>
+                <div>
+                    <div class="license-title">Personal Use — No Restrictions</div>
+                    <div class="license-desc">Use freely in personal projects, portfolio pieces, and non-commercial work. No attribution required.</div>
+                </div>
+            </div>
+            <div class="license-item">
+                <div class="license-icon">🏢</div>
+                <div>
+                    <div class="license-title">Commercial Use — Verify First</div>
+                    <div class="license-desc">Many fonts on FreeFonts1001 allow commercial use. Always check the individual license — it's listed on every font's download page.</div>
+                </div>
+            </div>
+            <div class="license-item">
+                <div class="license-icon">⚠️</div>
+                <div>
+                    <div class="license-title">Modifications — Usually OK</div>
+                    <div class="license-desc">Most free font licenses permit modifications. You can customize, tweak weight, and adjust for your project needs.</div>
+                </div>
+            </div>
+            <div class="license-item">
+                <div class="license-icon">🔄</div>
+                <div>
+                    <div class="license-title">Redistribution — Generally Not Allowed</div>
+                    <div class="license-desc">Don't re-host or redistribute fonts as-is. Direct your audience to FreeFonts1001 to download from the original source.</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top:32px; overflow-x:auto;">
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>Use Case</th>
+                        <th>Personal Use</th>
+                        <th>Commercial Use (Verified)</th>
+                        <th>Requires License Check</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Blog / Personal website</td>
+                        <td class="check">✓ Allowed</td>
+                        <td class="check">✓ Allowed</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Client branding / logos</td>
+                        <td class="cross">✗ Not allowed</td>
+                        <td class="check">✓ Allowed</td>
+                        <td class="check">✓ Confirm license</td>
+                    </tr>
+                    <tr>
+                        <td>Print-on-demand products</td>
+                        <td class="cross">✗ Not allowed</td>
+                        <td class="check">✓ Allowed</td>
+                        <td class="check">✓ Confirm license</td>
+                    </tr>
+                    <tr>
+                        <td>Book / ebook publishing</td>
+                        <td class="cross">✗ Not allowed</td>
+                        <td class="check">✓ Allowed</td>
+                        <td class="check">✓ Confirm license</td>
+                    </tr>
+                    <tr>
+                        <td>App / game embedding</td>
+                        <td class="cross">✗ Not allowed</td>
+                        <td>Varies</td>
+                        <td class="check">✓ Always check</td>
+                    </tr>
+                    <tr>
+                        <td>Social media graphics</td>
+                        <td class="check">✓ Allowed</td>
+                        <td class="check">✓ Allowed</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- HOW TO USE -->
+<section class="section">
+    <div class="container">
+        <div class="section-label">Quick Start</div>
+        <h2 class="section-title">How to Download & Install Fonts</h2>
+        <p class="section-sub">Three simple steps from browsing to using in your design. Works on Windows, macOS, and Linux.</p>
+
+        <div class="guide-steps">
+            <div class="guide-step">
+                <div class="step-num">01</div>
+                <div>
+                    <div class="step-title">Browse & Filter</div>
+                    <div class="step-desc">Use category filters, search by name, or browse trending styles. Filter by license type to find commercial-use fonts fast.</div>
+                </div>
+            </div>
+            <div class="guide-step">
+                <div class="step-num">02</div>
+                <div>
+                    <div class="step-title">Preview & Select</div>
+                    <div class="step-desc">See your own text rendered in the font before downloading. Adjust size, color, and background to test readability.</div>
+                </div>
+            </div>
+            <div class="guide-step">
+                <div class="step-num">03</div>
+                <div>
+                    <div class="step-title">Download TTF / OTF</div>
+                    <div class="step-desc">One-click download. Both TTF (TrueType) and OTF (OpenType) formats available. Compatible with all major operating systems.</div>
+                </div>
+            </div>
+            <div class="guide-step">
+                <div class="step-num">04</div>
+                <div>
+                    <div class="step-title">Install & Create</div>
+                    <div class="step-desc">Double-click the file to install (or drag to font book). Works instantly in Figma, Adobe apps, Canva, Word, and all browsers.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+    <h2>15,000+ Free Fonts.<br><em style="font-family:'Playfair Display',serif;color:var(--accent)">Updated Every Single Day.</em></h2>
+    <p>Join designers, developers, and creatives who discover their next perfect typeface on FreeFonts1001 every morning.</p>
+    <a href="https://www.freefonts1001.com/" class="btn btn-primary" style="font-size:17px;padding:16px 40px;">Start Exploring →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 <a href="https://www.freefonts1001.com/">FreeFonts1001.com</a> · Over 15,000 free fonts · TTF & OTF formats · Updated daily</p>
+    <p style="margin-top:8px;">Fonts available for personal and commercial use — check individual licenses before commercial deployment.</p>
+</footer>
+
+</body>
+</html>
