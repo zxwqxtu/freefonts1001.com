@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-FreeFonts1001 每日字体专题生成器
-每天生成 1 篇字体历史 / 设计师故事 / 趋势解读 专题页
+FreeFonts1001 每三天字体专题生成器
+每隔3天生成 1 篇字体历史 / 设计师故事 / 趋势解读 专题页
 文件名：[YYYY-MM-DD].html  →  保存在 /Users/a1/www/freefonts1001.com/
 自动 git commit & push
 """
