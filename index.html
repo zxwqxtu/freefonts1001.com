@@ -420,9 +420,66 @@
             background: var(--border);
             margin: 0;
         }
+        /* Daily Story */
+        .daily-story-banner {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            border-radius: 12px;
+            padding: 24px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin: 40px auto 0;
+            max-width: 740px;
+            transition: all 0.2s;
+        }
+        .daily-story-banner:hover {
+            border-color: var(--accent);
+            background: var(--surface2);
+            transform: translateX(2px);
+        }
+        .daily-story-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .daily-story-emoji {
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+        .daily-story-date {
+            font-size: 11px;
+            color: var(--text-dim);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .daily-story-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text);
+            line-height: 1.3;
+        }
+        .daily-story-link {
+            white-space: nowrap;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+        .daily-story-link:hover { color: #f0d45e; text-decoration: none; }
+
         @media (max-width: 640px) {
             .hero, .section { padding-left: 20px; padding-right: 20px; }
             .hero-stats { gap: 24px; }
+            .daily-story-banner { flex-direction: column; align-items: flex-start; }
         }
     </style>
 </head>
@@ -457,6 +514,18 @@
         <a href="https://www.freefonts1001.com/" class="btn btn-primary">Browse All Fonts →</a>
         <a href="https://www.freefonts1001.com/" class="btn btn-outline">View Categories</a>
     </div>
+
+    <!-- Daily Story -->
+    <a href="2026-05-08.html" class="daily-story-banner">
+        <div class="daily-story-left">
+            <span class="daily-story-emoji">✨</span>
+            <div>
+                <div class="daily-story-date">Today's Read · May 08, 2026</div>
+                <div class="daily-story-title">Bodoni: The Typeface That Defined Luxury</div>
+            </div>
+        </div>
+        <span class="daily-story-link">Read Story →</span>
+    </a>
 </section>
 
 <!-- FONT CATEGORIES -->
