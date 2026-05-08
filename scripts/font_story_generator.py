@@ -732,11 +732,8 @@ def run(date_override: str = None):
     html = generate_html(topic, date)
 
     # 文件名：[YYYY-MM-DD].html
-    # instroduce/ 子目录
-    introduce_dir = BASE_DIR / "instroduce"
-    introduce_dir.mkdir(exist_ok=True)
     filename = f"{date.isoformat()}.html"
-    html_path = introduce_dir / filename
+    html_path = BASE_DIR / filename
     html_path.write_text(html, encoding='utf-8')
     print(f"[OK]   Saved: {html_path} ({len(html):,} bytes)")
 

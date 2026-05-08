@@ -1,0 +1,1 @@
+0 9 * * * cd /Users/a1/www/freefonts1001.com && /usr/bin/python3 scripts/font_story_generator.py >> /Users/a1/www/freefonts1001.com/scripts/cron.log 2>&1
