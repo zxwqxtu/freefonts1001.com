@@ -8,6 +8,9 @@ FreeFonts1001 每三天字体专题生成器
 
 import os
 import json
+import re
+import subprocess
+import datetime
 import random
 import datetime
 import re
@@ -715,6 +718,57 @@ def git_commit_and_push(html_path: Path, topic: dict, date: datetime.date):
             print(f"[OK]   git {' '.join(cmd)}")
 
 
+def update_index_html(date: datetime.date, title: str):
+    """
+    更新 index.html 中的每日故事横幅，指向新生成的文章。
+    """
+    index_path = BASE_DIR / 'index.html'
+    if not index_path.exists():
+        print("[WARN] index.html not found, skipping update")
+        return
+
+    content = index_path.read_text(encoding='utf-8')
+
+    # 日期显示格式: "Today's Read · May 15, 2026"
+    month_names = ['January','February','March','April','May','June',
+                   'July','August','September','October','November','December']
+    date_display = f"Today's Read · {month_names[date.month-1]} {date.day}, {date.year}"
+    date_str = date.isoformat()
+    new_href = f"/instroduce/{date_str}"
+
+    # 替换 href
+    old_href_pattern = r'href="/instroduce/\d{4}-\d{2}-\d{2}"'
+    new_href_attr = f'href="{new_href}"'
+    content_new, n1 = re.subn(old_href_pattern, new_href_attr, content)
+
+    # 替换日期文字
+    old_date_pattern = r"Today's Read · \w+ \d{1,2}, \d{4}"
+    content_new, n2 = re.subn(old_date_pattern, date_display, content_new)
+
+    # 替换标题（在 daily-story-title 的 div 里）
+    old_title_pattern = r'(<div class="daily-story-title">)[^<]+(</div>)'
+    content_new, n3 = re.subn(old_title_pattern, r'\g<1>' + title + r'\g<2>', content_new)
+
+    if n1 == 0 and n2 == 0 and n3 == 0:
+        print("[WARN] No banner found in index.html, skipping")
+        return
+
+    index_path.write_text(content_new, encoding='utf-8')
+    print(f"[OK]   Updated index.html banner → {date_str}")
+
+    # git commit index.html
+    cmd_add = ['git', 'add', 'index.html']
+    cmd_commit = ['git', 'commit', '-m', f'update: index.html daily story banner → {date_str}']
+    cmd_push = ['git', 'push', 'origin', 'main']
+    for cmd in [cmd_add, cmd_commit, cmd_push]:
+        result = subprocess.run(cmd, cwd=BASE_DIR, capture_output=True, text=True)
+        cmd_str = ' '.join(cmd)
+        if result.returncode != 0:
+            print(f"[WARN] git {cmd_str}: {result.stderr.strip()}")
+        else:
+            print(f"[OK]   git {cmd_str}")
+
+
 def run(date_override: str = None):
     """
     主运行函数：
@@ -742,6 +796,12 @@ def run(date_override: str = None):
         git_commit_and_push(html_path, topic, date)
     except Exception as e:
         print(f"[WARN] Git push failed: {e}")
+
+    # 更新首页横幅
+    try:
+        update_index_html(date, topic['title'])
+    except Exception as e:
+        print(f"[WARN] index.html update failed: {e}")
 
     return html_path, topic, date
 
