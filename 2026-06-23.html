@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonathan Hoefler: The Type Designer Who Gave Typography Back Its Ambition | FreeFonts1001 Daily Story</title>
+    <meta name="description" content="Hoefler is the typographer behind the typefaces used in the Harry Potter books, Barack Obama's 2008 campaign, and the New York Times Magazine. He's also th...">
+    <meta name="keywords" content="designer, foundry, editorial, american, Gotham, Hoefler Text, Mercury, Tungsten">
+    <meta property="og:title" content="Jonathan Hoefler: The Type Designer Who Gave Typography Back Its Ambition">
+    <meta property="og:description" content="Hoefler is the typographer behind the typefaces used in the Harry Potter books, Barack Obama's 2008 campaign, and the New York Times Magazine. He's also th...">
+    <meta property="og:type" content="article">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f0f0f; --surface: #1a1a1a; --surface2: #252525;
+            --accent: #e8c547; --accent2: #ff6b35; --text: #f0ece3;
+            --text-dim: #9b9589; --border: #2e2e2e;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.75; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* ── Header ── */
+        .site-header {
+            border-bottom: 1px solid var(--border);
+            padding: 16px 40px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .site-logo {
+            font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
+            color: var(--text); text-decoration: none;
+        }
+        .site-logo em { color: var(--accent); font-style: italic; }
+        .site-nav { font-size: 13px; color: var(--text-dim); }
+        .site-nav a { color: var(--text-dim); margin-left: 24px; }
+        .site-nav a:hover { color: var(--accent); }
+
+        /* ── Hero ── */
+        .article-hero {
+            padding: 80px 40px 60px;
+            max-width: 860px; margin: 0 auto;
+        }
+        .article-meta {
+            display: flex; align-items: center; gap: 16px;
+            font-size: 12px; color: var(--text-dim);
+            letter-spacing: 1px; text-transform: uppercase; margin-bottom: 24px;
+        }
+        .article-category {
+            background: rgba(232,197,71,0.12); color: var(--accent);
+            border: 1px solid rgba(232,197,71,0.25); padding: 3px 12px;
+            border-radius: 20px; font-weight: 600;
+        }
+        .article-emoji { font-size: 48px; margin-bottom: 20px; }
+        h1 {
+            font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 58px);
+            font-weight: 700; line-height: 1.1; margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+        .article-intro {
+            font-size: 18px; color: var(--text-dim); font-weight: 300;
+            max-width: 680px; border-left: 3px solid var(--accent);
+            padding-left: 20px; margin-bottom: 16px;
+        }
+        .article-info { font-size: 13px; color: var(--text-dim); margin-top: 8px; }
+
+        /* ── Content ── */
+        .article-body { max-width: 740px; margin: 0 auto; padding: 0 40px 80px; }
+        .article-content {}
+        .article-section {
+            margin-bottom: 52px; padding-bottom: 52px;
+            border-bottom: 1px solid var(--border);
+        }
+        .article-section:last-child { border-bottom: none; }
+        .article-section h2 {
+            font-family: 'Playfair Display', serif; font-size: 26px;
+            font-weight: 700; margin-bottom: 18px; line-height: 1.2;
+        }
+        .article-section h2::before {
+            content: '🗽  '; color: var(--accent); margin-right: 8px;
+        }
+        .article-section p { font-size: 16px; color: var(--text-dim); margin-bottom: 16px; }
+        .article-section p:last-child { margin-bottom: 0; }
+
+        /* ── Related Fonts ── */
+        .related-fonts {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin: 52px 0;
+        }
+        .related-fonts h3 {
+            font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+            color: var(--accent); margin-bottom: 16px;
+        }
+        .font-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+        .font-chip {
+            background: var(--surface2); border: 1px solid var(--border);
+            padding: 8px 16px; border-radius: 8px; font-size: 14px;
+            font-weight: 600; color: var(--text); cursor: pointer;
+            transition: all 0.2s;
+        }
+        .font-chip:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+        /* ── Tags ── */
+        .article-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 32px 0; }
+        .tag {
+            font-size: 11px; background: var(--surface); color: var(--text-dim);
+            border: 1px solid var(--border); padding: 4px 12px; border-radius: 20px;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+
+        /* ── Share ── */
+        .share-section {
+            border-top: 1px solid var(--border);
+            padding: 40px 0; display: flex; align-items: center; gap: 16px;
+        }
+        .share-label { font-size: 13px; color: var(--text-dim); }
+        .share-btn {
+            background: var(--surface2); border: 1px solid var(--border);
+            color: var(--text); padding: 10px 20px; border-radius: 8px;
+            font-size: 14px; cursor: pointer; transition: all 0.2s;
+            font-family: inherit;
+        }
+        .share-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* ── Bottom CTA ── */
+        .bottom-cta {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 16px; padding: 48px; text-align: center;
+            max-width: 740px; margin: 0 auto 80px;
+        }
+        .bottom-cta h2 {
+            font-family: 'Playfair Display', serif; font-size: 28px;
+            margin-bottom: 12px;
+        }
+        .bottom-cta p { color: var(--text-dim); font-size: 15px; margin-bottom: 24px; }
+        .btn-primary {
+            display: inline-block; background: var(--accent); color: #0f0f0f;
+            padding: 14px 32px; border-radius: 8px; font-weight: 600;
+            text-decoration: none; transition: all 0.2s; font-size: 15px;
+        }
+        .btn-primary:hover { background: #f0d45e; text-decoration: none; }
+
+        /* ── Footer ── */
+        footer {
+            border-top: 1px solid var(--border); padding: 32px 40px;
+            text-align: center; font-size: 12px; color: var(--text-dim);
+        }
+        footer a { color: var(--text-dim); }
+        footer a:hover { color: var(--accent); }
+
+        @media (max-width: 640px) {
+            .article-hero, .article-body { padding-left: 20px; padding-right: 20px; }
+            .site-header { padding: 14px 20px; }
+            .site-nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Site Header -->
+<header class="site-header">
+    <a href="https://www.freefonts1001.com/" class="site-logo">FreeFonts<em>1001</em></a>
+    <nav class="site-nav">
+        <a href="https://www.freefonts1001.com/">Home</a>
+        <a href="https://www.freefonts1001.com/">Categories</a>
+        <a href="https://www.freefonts1001.com/">Trending</a>
+        <a href="https://www.freefonts1001.com/">License Guide</a>
+    </nav>
+</header>
+
+<!-- Article Hero -->
+<article>
+    <div class="article-hero">
+        <div class="article-meta">
+            <span class="article-category">Designer Profile</span>
+            <span>8 min read</span>
+            <span>June 23, 2026</span>
+        </div>
+        <div class="article-emoji">🗽</div>
+        <h1>Jonathan Hoefler: The Type Designer Who Gave Typography Back Its Ambition</h1>
+        <p class="article-intro">Hoefler is the typographer behind the typefaces used in the Harry Potter books, Barack Obama's 2008 campaign, and the New York Times Magazine. He's also the founder of Hoefler&Co (formerly Hoefler Text), one of the most respected independent type foundries in the world.</p>
+        <div class="article-tags">
+            <span class="tag">designer</span><span class="tag">foundry</span><span class="tag">editorial</span><span class="tag">american</span>
+        </div>
+    </div>
+
+    <!-- Article Body -->
+    <div class="article-body">
+        <div class="article-content">
+            
+        <div class="article-section">
+            <h2>The Making of a Type Legend</h2>
+            <p>Jonathan Hoefler grew up in a suburb of Chicago, studied at Yale's graphic design program, and got his first job at the New York Times. At the Times, he discovered that most of what was being called 'typography' was really just 'using default fonts.' He left in 1991 to start his own foundry with partner Tobias Frere-Jones, creating typefaces of unprecedented ambition. Their partnership lasted 20 years before a famous, acrimonious split that became a landmark case in intellectual property law for type designers.</p>
+        </div>
+        <div class="article-section">
+            <h2>Typography for the Masses: Gotham and Obama's 2008</h2>
+            <p>Hoefler's Gotham became the defining typeface of Barack Obama's 2008 presidential campaign. The brief was simple: create a typeface that looked like it was found on a building in Chicago. The result — inspired by New Deal-era architectural lettering — became the most recognizable political brand asset in modern American history. Gotham was used on yard signs, websites, buses, and t-shirts. Hoefler famously offered it to the campaign for free, a decision that generated enormous goodwill and cemented his reputation as a designer with principles.</p>
+        </div>
+        <div class="article-section">
+            <h2>The Hoefler&Co Philosophy Today</h2>
+            <p>Hoefler&Co now licenses over 1,200 typeface families and serves clients from Vogue to the US government. Their approach: obsessive optical refinement, deep historical research into letterform traditions, and a belief that type should communicate something genuinely new rather than merely serve as a vehicle for content. Their Discoverability project (2021) reimagined how type specimens work — presenting typefaces not as samples but as arguments about what typography can do.</p>
+        </div>
+        </div>
+
+        <!-- Related Fonts -->
+        <div class="related-fonts">
+            <h3>🔗 Related Fonts on FreeFonts1001</h3>
+            <div class="font-chips">
+                <span class="font-chip">✦ Gotham</span><span class="font-chip">✦ Hoefler Text</span><span class="font-chip">✦ Mercury</span><span class="font-chip">✦ Tungsten</span>
+            </div>
+        </div>
+
+        <!-- Share -->
+        <div class="share-section">
+            <span class="share-label">Share this story:</span>
+            <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.href); this.textContent='✓ Link Copied!'">Copy Link</button>
+        </div>
+    </div>
+</article>
+
+<!-- Bottom CTA -->
+<div class="bottom-cta" style="padding: 0 40px 80px; max-width: 860px; margin: 0 auto;">
+    <h2>Explore More Free Fonts</h2>
+    <p>Browse 15,000+ free fonts for personal and commercial use — updated daily on FreeFonts1001.</p>
+    <a href="https://www.freefonts1001.com/" class="btn-primary">Browse All Fonts →</a>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 <a href="https://www.freefonts1001.com/">FreeFonts1001.com</a> · Daily Font Stories · Updated Every Day</p>
+</footer>
+
+</body>
+</html>
